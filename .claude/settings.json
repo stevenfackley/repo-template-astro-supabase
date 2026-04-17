@@ -30,5 +30,15 @@
       "Bash(npx drizzle-kit drop:*)"
     ]
   },
-  "env": { "POWERSHELL_TELEMETRY_OPTOUT": "1" }
+  "env": { "POWERSHELL_TELEMETRY_OPTOUT": "1" },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          { "type": "command", "command": "pwsh -NoProfile -File .claude/hooks/format-node.ps1" }
+        ]
+      }
+    ]
+  }
 }
