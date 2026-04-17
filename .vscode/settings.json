@@ -1,0 +1,10 @@
+{
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": "explicit" },
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[astro]": { "editor.defaultFormatter": "astro-build.astro-vscode" }
+}

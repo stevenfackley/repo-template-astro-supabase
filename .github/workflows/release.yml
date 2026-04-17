@@ -1,0 +1,14 @@
+name: release
+on:
+  workflow_dispatch:
+    inputs:
+      label:
+        description: Release label appended to YYYYMMDD_..._Release
+        required: true
+jobs:
+  tag:
+    uses: stevenfackley/gh-actions/.github/workflows/release.yml@v1
+    with:
+      project-name: {{PROJECT_NAME}}
+      label: ${{ inputs.label }}
+    secrets: inherit

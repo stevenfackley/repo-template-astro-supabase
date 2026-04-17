@@ -1,0 +1,7 @@
+services:
+  app:
+    image: ${IMAGE_REF:?IMAGE_REF required}
+    env_file: .env
+    restart: always
+    ports: ["127.0.0.1:4321:4321"]
+    logging: { driver: json-file, options: { max-size: "10m", max-file: "3" } }

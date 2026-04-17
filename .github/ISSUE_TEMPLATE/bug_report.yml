@@ -1,0 +1,15 @@
+name: Bug
+description: Something is broken.
+labels: [bug]
+body:
+  - type: textarea
+    id: repro
+    attributes: { label: Reproduction, description: Minimal steps. }
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes: { label: Expected vs actual }
+    validations: { required: true }
+  - type: input
+    id: version
+    attributes: { label: Version / commit SHA }

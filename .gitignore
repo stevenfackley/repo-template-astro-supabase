@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.local
+*.log
+coverage/
+playwright-report/
+test-results/
+.vscode/*.local.json
+drizzle/meta/_journal.json.bak
+.DS_Store

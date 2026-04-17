@@ -1,0 +1,26 @@
+name: ci
+
+on:
+  pull_request:
+  push: { branches: [main] }
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  ci:
+    uses: stevenfackley/gh-actions/.github/workflows/ci-astro.yml@v1
+    with:
+      project-name: {{PROJECT_NAME}}
+      node-version: "22"
+      workspace: ""
+      run-e2e: true
+      health-path: /healthz
+      port: "4321"
+    secrets: inherit
+
+  secret-scan:
+    uses: stevenfackley/gh-actions/.github/workflows/secret-scan.yml@v1
+    with:
+      paths: "src scripts db"

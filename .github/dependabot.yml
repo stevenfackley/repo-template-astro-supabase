@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule: { interval: weekly }
+    open-pull-requests-limit: 5
+    groups:
+      astro: { patterns: ["astro", "@astrojs/*"] }
+      drizzle: { patterns: ["drizzle-orm", "drizzle-kit"] }
+      react: { patterns: ["react", "react-dom", "@types/react*"] }
+      test: { patterns: ["vitest", "@vitest/*", "@playwright/*"] }
+      lint: { patterns: ["eslint*", "typescript-eslint", "@typescript-eslint/*"] }
+  - package-ecosystem: github-actions
+    directory: /
+    schedule: { interval: weekly }
+  - package-ecosystem: docker
+    directory: /
+    schedule: { interval: weekly }
