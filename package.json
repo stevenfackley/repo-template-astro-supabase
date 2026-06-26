@@ -23,9 +23,9 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "astro": "^6.0.0",
-    "@astrojs/node": "^10.0.5",
-    "@astrojs/react": "^5.0.0",
+    "astro": "^7.0.3",
+    "@astrojs/node": "^11.0.0",
+    "@astrojs/react": "^6.0.0",
     "@aws-sdk/client-s3": "^3.670.0",
     "@aws-sdk/s3-request-presigner": "^3.670.0",
     "drizzle-orm": "^0.45.2",
