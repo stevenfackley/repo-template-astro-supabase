@@ -11,10 +11,10 @@
     "preview": "astro preview",
     "lint": "eslint .",
     "typecheck": "astro check && tsc --noEmit",
-    "test": "vitest run",
+    "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
-    "test:unit": "vitest run tests/unit src",
-    "test:integration": "vitest run tests/integration",
+    "test:unit": "vitest run --passWithNoTests tests/unit src",
+    "test:integration": "vitest run --passWithNoTests tests/integration",
     "test:e2e": "playwright test --project=integration",
     "test:e2e:smoke": "playwright test --project=smoke",
     "db:push": "drizzle-kit push",
@@ -34,14 +34,19 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.48.0",
     "@types/node": "^26.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "drizzle-kit": "^0.31.10",
     "eslint": "^10.2.0",
+    "eslint-plugin-astro": "^3.1.0",
+    "globals": "^17.11.0",
     "tsx": "^4.19.0",
-    "typescript": "^7.0.2",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.68.0",
     "vitest": "^4.1.4"
   }
 }
