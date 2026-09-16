@@ -111,12 +111,19 @@ jobs:
         with:
           node-version: "22"
 
-      # No lockfile is committed, and a fresh cut has none either — `npm
-      # install` is deliberately what a new repo would actually run.
+      # A committed package-lock.json is what makes this step reliable: npm
+      # 10.9.8 (bundled with Node 22, what setup-node installs above) has an
+      # arborist race in peer-set resolution during a from-scratch install —
+      # "Cannot read properties of null (reading 'edgesOut')" in
+      # #loadPeerSet (npm/cli#9787), fixed upstream in npm 11.6.0+. `npm ci`
+      # sidesteps it entirely because it reifies straight from the lockfile
+      # instead of re-resolving the dependency graph, so it's what a real
+      # fresh cut of this template should run too — see package-lock.json at
+      # the repo root.
       - name: Install
         if: steps.guard.outputs.template == 'true'
         working-directory: ${{ env.RENDER }}
-        run: npm install --no-audit --no-fund
+        run: npm ci --no-audit --no-fund
 
       - name: Lint
         if: steps.guard.outputs.template == 'true'
