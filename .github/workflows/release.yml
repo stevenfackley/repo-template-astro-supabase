@@ -7,8 +7,9 @@ on:
         required: true
 jobs:
   tag:
+    if: github.repository != 'stevenfackley/repo-template-astro-supabase'
     uses: stevenfackley/gh-actions/.github/workflows/release.yml@v1
     with:
-      project-name: {{PROJECT_NAME}}
+      project-name: "{{PROJECT_NAME}}"
       label: ${{ inputs.label }}
     secrets: inherit
