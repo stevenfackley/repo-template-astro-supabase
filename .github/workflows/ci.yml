@@ -10,9 +10,10 @@ concurrency:
 
 jobs:
   ci:
+    if: github.repository != 'stevenfackley/repo-template-astro-supabase'
     uses: stevenfackley/gh-actions/.github/workflows/ci-astro.yml@v1
     with:
-      project-name: {{PROJECT_NAME}}
+      project-name: "{{PROJECT_NAME}}"
       node-version: "22"
       workspace: ""
       run-e2e: true
@@ -21,6 +22,7 @@ jobs:
     secrets: inherit
 
   secret-scan:
+    if: github.repository != 'stevenfackley/repo-template-astro-supabase'
     uses: stevenfackley/gh-actions/.github/workflows/secret-scan.yml@v1
     with:
       paths: "src scripts db"
