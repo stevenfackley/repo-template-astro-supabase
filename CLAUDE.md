@@ -11,7 +11,7 @@ analyze -> read docs/ -> read package.json + tsconfig.json + drizzle.config.ts -
 - Release tags: `YYYYMMDD_{{PROJECT_NAME}}_Release`.
 - Routes: `src/pages/`. API endpoints export `GET`/`POST`. `prerender = false` for anything dynamic.
 - DB: drizzle-kit migrations checked into `drizzle/`. No raw `psql` schema edits. Supabase extensions (pgcrypto, pgsodium, pgvector, pg_graphql, pgjwt) available by default.
-- Storage: S3-compatible via `S3_ENDPOINT`. MinIO locally, Cloudflare R2 in prod. Never hardcode bucket URLs.
+- Storage: S3-compatible via `S3_ENDPOINT`. MinIO locally, Cloudflare R2 in prod. Never hardcode bucket URLs. Pull the MinIO images from `quay.io` (`quay.io/minio/minio`, `quay.io/minio/mc`) — Docker Hub no longer serves the `minio/minio` repository.
 - Lint: `eslint` flat config. Types strict + `noUncheckedIndexedAccess`.
 - Tests: vitest (unit), playwright (smoke PR, integration main).
 - Commits: Conventional Commits.
