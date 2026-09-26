@@ -16,4 +16,4 @@ Terminate TLS upstream (nginx / Caddy / ingress). Proxy `:4321` → the containe
 
 ## Managed alternatives
 - DB: swap `DATABASE_URL` to a Supabase Cloud connection string when free-tier headroom is gone.
-- Storage: set `S3_ENDPOINT=https://<account-id>.r2.cloudflarestorage.com` and drop the `minio` + `minio-init` services from compose.
+- Storage: set `S3_ENDPOINT=https://<account-id>.r2.cloudflarestorage.com` and drop the `s3` + `s3-init` services from compose.

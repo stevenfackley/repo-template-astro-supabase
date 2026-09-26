@@ -3,7 +3,7 @@
 ```
 Client --HTTP--> Astro SSR --drizzle--> supabase/postgres
                      |            \
-                     |             +--> S3 SDK --> R2 (prod) / MinIO (local)
+                     |             +--> S3 SDK --> R2 (prod) / RustFS (local)
                      +--> render HTML + React islands --> Client
 ```
 

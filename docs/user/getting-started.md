@@ -5,14 +5,14 @@
 
 ## Run
 ```
-docker compose up -d db minio minio-init
+docker compose up -d db s3 s3-init
 npm ci
 cp .env.dev .env
 npm run db:push
 npm run dev
 ```
 
-Open http://localhost:4321. `/healthz` returns JSON. MinIO console is http://localhost:9001 (minioadmin/minioadmin).
+Open http://localhost:4321. `/healthz` returns JSON. RustFS console is http://localhost:9001 (minioadmin/minioadmin).
 
 ## Hot-reload
 Astro HMR is on for `.astro`, `.ts`, `.tsx`. Schema changes need `npm run db:push` to re-sync the dev DB.
