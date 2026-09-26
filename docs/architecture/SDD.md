@@ -12,9 +12,9 @@
 - Connection via `postgres-js` with pool size 10. `DATABASE_URL` is required at boot.
 
 ## Object storage
-- S3-compatible API. Cloudflare R2 in prod; MinIO sidecar locally (mirrors R2's surface).
+- S3-compatible API. Cloudflare R2 in prod; RustFS sidecar locally (mirrors R2's surface).
 - Env: `S3_ENDPOINT`, `S3_REGION=auto`, `S3_ACCESS_KEY_ID`, `S3_SECRET_ACCESS_KEY`, `S3_BUCKET`, `S3_FORCE_PATH_STYLE=true`, optional `S3_PUBLIC_BASE_URL`.
-- `docker-compose.yml` boots `minio` + a one-shot `minio-init` that creates the local bucket.
+- `docker-compose.yml` boots `s3` (RustFS) + a one-shot `s3-init` that creates the local bucket.
 
 ## Rendering
 - SSR by default. `export const prerender = true` on pages that can be static.

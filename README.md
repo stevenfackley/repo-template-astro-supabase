@@ -1,16 +1,16 @@
 # {{PROJECT_NAME}}
 
-Astro 6 SSR app backed by Supabase (`supabase/postgres`) + Drizzle ORM + R2/S3-compatible object storage (MinIO locally).
+Astro 6 SSR app backed by Supabase (`supabase/postgres`) + Drizzle ORM + R2/S3-compatible object storage (RustFS locally).
 
 ## Quick start
 ```bash
-docker compose up -d db minio minio-init
+docker compose up -d db s3 s3-init
 npm ci
 cp .env.dev .env
 npm run db:push
 npm run dev
 ```
-Visit http://localhost:4321. MinIO console: http://localhost:9001 (minioadmin/minioadmin). See `C:\Users\steve\projects\DEV_SETUP_GUIDE.md` for workstation setup.
+Visit http://localhost:4321. RustFS console: http://localhost:9001 (minioadmin/minioadmin). See `C:\Users\steve\projects\DEV_SETUP_GUIDE.md` for workstation setup.
 
 ## Scripts
 - `npm run dev` — Astro dev (HMR).
