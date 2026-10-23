@@ -34,7 +34,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
+    "@astrojs/check": "^0.9.11",
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.48.0",
     "@types/node": "^26.6.3",
