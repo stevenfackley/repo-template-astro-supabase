@@ -1,6 +1,6 @@
 # {{PROJECT_NAME}}
 
-Astro 6 SSR app backed by Supabase (`supabase/postgres`) + Drizzle ORM + R2/S3-compatible object storage (RustFS locally).
+Astro 7 SSR app backed by Supabase (`supabase/postgres`) + Drizzle ORM + R2/S3-compatible object storage (RustFS locally).
 
 ## Quick start
 ```bash
@@ -10,7 +10,7 @@ cp .env.dev .env
 npm run db:push
 npm run dev
 ```
-Visit http://localhost:4321. RustFS console: http://localhost:9001 (minioadmin/minioadmin). See `C:\Users\steve\projects\DEV_SETUP_GUIDE.md` for workstation setup.
+Visit http://localhost:4321. RustFS console: http://localhost:9001 (minioadmin/minioadmin). See [docs/user/getting-started.md](docs/user/getting-started.md) for workstation setup.
 
 ## Scripts
 - `npm run dev` — Astro dev (HMR).

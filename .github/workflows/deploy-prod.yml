@@ -8,8 +8,7 @@ on:
     inputs:
       ref: { required: true }
 
-# NOTE: Defaults to EC2-via-SSH. For K3s-via-Helm, replace the `deploy` job
-# with your project-specific helm invocation (see DEPLOY.md / ADR-N).
+# Deploys to EC2 via SSH (stevenfackley/gh-actions deploy-ec2-ssh.yml).
 
 jobs:
   build-push:

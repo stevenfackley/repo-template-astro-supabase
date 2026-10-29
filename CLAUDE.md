@@ -1,7 +1,7 @@
 # {{PROJECT_NAME}}
 
 ## Stack
-{{FLAVOR}}. Astro 6 SSR + Node adapter + Supabase (supabase/postgres) + Drizzle ORM + R2/S3 object storage. See `docs/architecture/SDD.md`.
+{{FLAVOR}}. Astro 7 SSR + Node adapter + Supabase (supabase/postgres) + Drizzle ORM + R2/S3 object storage. See `docs/architecture/SDD.md`.
 
 ## Standard flow
 analyze -> read docs/ -> read package.json + tsconfig.json + drizzle.config.ts -> plan -> work.

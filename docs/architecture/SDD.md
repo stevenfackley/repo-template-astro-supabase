@@ -1,7 +1,7 @@
 # System Design — {{PROJECT_NAME}}
 
 ## Runtime
-- Astro 6 SSR (Node adapter, standalone) on Node 22 alpine.
+- Astro 7 SSR (Node adapter, standalone) on Node 26 alpine.
 - Single stateless container. Scales horizontally behind a load balancer.
 - Listens on `:4321`. `/healthz` is the liveness endpoint (JSON, no-store).
 
