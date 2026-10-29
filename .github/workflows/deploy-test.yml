@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-push:
-    if: ${{ (github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success') && github.repository != 'stevenfackley/repo-template-astro-supabase' }}
+    if: ${{ (github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_commit.author.name != 'dependabot[bot]')) && github.repository != 'stevenfackley/repo-template-astro-supabase' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -26,7 +26,8 @@ jobs:
 
   deploy:
     needs: build-push
-    if: github.repository != 'stevenfackley/repo-template-astro-supabase'
+    # Dependabot auto-merges patch bumps into main; those must not deploy.
+    if: ${{ (github.event_name == 'workflow_dispatch' || github.event.workflow_run.head_commit.author.name != 'dependabot[bot]') && github.repository != 'stevenfackley/repo-template-astro-supabase' }}
     uses: stevenfackley/gh-actions/.github/workflows/deploy-ec2-ssh.yml@v1
     with:
       image-ref: ${{ needs.build-push.outputs.image-ref }}
