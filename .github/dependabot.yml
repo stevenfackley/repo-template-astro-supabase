@@ -2,14 +2,15 @@ version: 2
 updates:
   - package-ecosystem: npm
     directory: /
-    schedule: { interval: weekly }
-    open-pull-requests-limit: 5
+    schedule: { interval: monthly }
+    open-pull-requests-limit: 3
+    # Fleet guardrail: groups carry minor/patch only, so majors arrive alone.
     groups:
-      astro: { patterns: ["astro", "@astrojs/*"] }
-      drizzle: { patterns: ["drizzle-orm", "drizzle-kit"] }
-      react: { patterns: ["react", "react-dom", "@types/react*"] }
-      test: { patterns: ["vitest", "@vitest/*", "@playwright/*"] }
-      lint: { patterns: ["eslint*", "typescript-eslint", "@typescript-eslint/*"] }
+      astro: { patterns: ["astro", "@astrojs/*"], update-types: ["minor", "patch"] }
+      drizzle: { patterns: ["drizzle-orm", "drizzle-kit"], update-types: ["minor", "patch"] }
+      react: { patterns: ["react", "react-dom", "@types/react*"], update-types: ["minor", "patch"] }
+      test: { patterns: ["vitest", "@vitest/*", "@playwright/*"], update-types: ["minor", "patch"] }
+      lint: { patterns: ["eslint*", "typescript-eslint", "@typescript-eslint/*"], update-types: ["minor", "patch"] }
     ignore:
       # TypeScript majors are held until the lint toolchain can read them.
       #
@@ -33,7 +34,13 @@ updates:
         update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
-    schedule: { interval: weekly }
+    schedule: { interval: monthly }
+    open-pull-requests-limit: 3
+    groups:
+      actions: { patterns: ["*"], update-types: ["minor", "patch"] }
   - package-ecosystem: docker
     directory: /
-    schedule: { interval: weekly }
+    schedule: { interval: monthly }
+    open-pull-requests-limit: 3
+    groups:
+      docker: { patterns: ["*"], update-types: ["minor", "patch"] }

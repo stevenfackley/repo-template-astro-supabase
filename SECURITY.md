@@ -9,9 +9,9 @@ Report vulnerabilities privately to stevenfackley@gmail.com. Do not open public 
 - Branch protection requires `ci` and `secret-scan` green.
 
 ## Dependencies
-- Dependabot grouped weekly.
+- Dependabot grouped monthly (minor/patch; majors arrive alone).
 - CI fails on `npm audit` high/critical.
 
 ## Runtime
 - Runs as non-root (`astro:1001`).
-- HTTPS termination at edge (EC2 via nginx / K3s via ingress).
+- HTTPS termination at edge (EC2 via nginx).
