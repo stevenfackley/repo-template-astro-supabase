@@ -23,7 +23,7 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "astro": "^7.4.4",
+    "astro": "^7.4.12",
     "@astrojs/node": "^11.1.8",
     "@astrojs/react": "^7.1.2",
     "@aws-sdk/client-s3": "^3.1159.0",
