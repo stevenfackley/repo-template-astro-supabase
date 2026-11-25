@@ -25,4 +25,6 @@ jobs:
     if: github.repository != 'stevenfackley/repo-template-astro-supabase'
     uses: stevenfackley/gh-actions/.github/workflows/secret-scan.yml@v1
     with:
-      paths: "src scripts db"
+      # The whole tree. A folder list ("src scripts db") skips every other folder and every file at the root.
+      # The shared workflow already leaves out docs/, .claude/ and the scanner's own pattern table.
+      paths: "."
